@@ -84,8 +84,8 @@ class HelloSelenium {
       WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
       driver.Navigate().GoToUrl("https://www.google.com/ncr");
       driver.FindElement(By.Name("q")).SendKeys("cheese" + Keys.Enter);
-      wait.Until(webDriver => webDriver.FindElement(By.CssSelector("h3")).Displayed);
-      IWebElement firstResult = driver.FindElement(By.CssSelector("h3"));
+      wait.Until(webDriver => webDriver.FindElement(By.TagName("h3")).Displayed);
+      IWebElement firstResult = driver.FindElement(By.TagName("h3"));
       Console.WriteLine(firstResult.GetAttribute("textContent"));
     }
   }
